@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 5%;
+    --foreground: 40 30% 92%;
+
+    --card: 0 20% 10%;
+    --card-foreground: 40 30% 92%;
+
+    --popover: 0 20% 10%;
+    --popover-foreground: 40 30% 92%;
+
+    --primary: 0 72% 50%;
+    --primary-foreground: 40 30% 95%;
+
+    --secondary: 40 60% 50%;
+    --secondary-foreground: 0 0% 5%;
+
+    --muted: 0 15% 18%;
+    --muted-foreground: 40 15% 60%;
+
+    --accent: 340 80% 55%;
+    --accent-foreground: 40 30% 95%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 0 20% 20%;
+    --input: 0 20% 20%;
+    --ring: 0 72% 50%;
+
+    --radius: 0.75rem;
+
+    --valentine-rose: 350 80% 60%;
+    --valentine-gold: 40 80% 55%;
+    --valentine-blush: 350 60% 85%;
+    --valentine-deep: 340 90% 30%;
+    --valentine-cream: 40 40% 92%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Cormorant Garamond', serif;
+  }
+}
+
+@layer utilities {
+  .font-cursive {
+    font-family: 'Great Vibes', cursive;
+  }
+  .font-display {
+    font-family: 'Playfair Display', serif;
+  }
+  .font-body {
+    font-family: 'Cormorant Garamond', serif;
+  }
+  .text-shimmer {
+    background: linear-gradient(
+      90deg,
+      hsl(var(--valentine-gold)),
+      hsl(40 90% 70%),
+      hsl(var(--valentine-gold))
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 3s linear infinite;
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes float-heart {
+  0% { transform: translateY(100vh) rotate(0deg) scale(0); opacity: 0; }
+  10% { opacity: 1; transform: translateY(90vh) rotate(20deg) scale(1); }
+  90% { opacity: 0.8; }
+  100% { transform: translateY(-10vh) rotate(720deg) scale(0.5); opacity: 0; }
+}
+
+@keyframes petal-fall {
+  0% { transform: translateY(-10%) translateX(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(110vh) translateX(100px) rotate(360deg); opacity: 0; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px hsl(var(--primary) / 0.4); }
+  50% { box-shadow: 0 0 40px hsl(var(--primary) / 0.8), 0 0 60px hsl(var(--valentine-rose) / 0.3); }
+}
