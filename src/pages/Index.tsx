@@ -44,7 +44,7 @@ const Index = () => {
   });
   
   // Navigate with hash
-  navigate(`/v/${encoded}`);
+
 };
 
   return (
